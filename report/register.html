@@ -3,52 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>회원등록 페이지</title>
+    <style>
+        h3{ font-weight: bold;
+            background-color: lightblue;
+            width: 800px;
+            padding: 0px 0px 0px 10px}
+        #txt_input label, #select_input label, #input label  {
+            display: inline-block;
+            margin-left: 8px;
+            text-align: right;
+            width: 130px;
+            padding-right: 8px;}
+        span{color:red;}
+    </style>
 </head>
 <body>
 <h1>취업 정보 계정 만들기</h1>
-<h3>* 필수 입력 항목</h3>
+<h3 style="color:red; font-size:10pt; background-color: white;">* 필수 입력 항목</h3>
 <form name="user_info" method="post" action="{%url'freateform'%}">
     <h3>기본 정보</h3>
     <div id="txt_input">
-    <label>이름*<input type="text" name="name" id="name" size="8"></label><br>
-    <label for="email">이메일*</label>
-    <input type="email" name="email" id="email" size="15" placeholder="id@domain_name"><br>
-    <label for="pwd">암호*</label>
-    <input type="password" name="pwd" id="pwd" size="12"><br>
-    <label for="pwd">암호 확인*</label>
-    <input type="password" name="checkpwd" id="checkpwd" size="12"><br>
-    <label>모바일 폰*</label>
-    <input type="tel" name="phone" id="phone" size="13" placeholder="010-0000-0000"><br>
-    <label>개인 홈페이지<input type="url" name="homepg" id="homepg" size="30" placeholder="http://"></label><br>
-    <label>주소*<input type="text" name="address" id="address" size="30"></label><br>
-</div>
+        <p><label>이름<span>*</span></label><input type="text" name="name" id="name" size="8"></p>
+        <p> <label for="email">이메일<span>*</span></label> <input type="email" name="email" id="email" size="15" placeholder="id@domain_name"> </p>
+        <p> <label for="pwd">암호<span>*</span></label> <input type="password" name="pwd" id="pwd" size="12"></p>
+        <p> <label for="pwd">암호 확인<span>*</span></label> <input type="password" name="checkpwd" id="checkpwd" size="12"></p>
+        <p><label>모바일 폰<span>*</span></label><input type="tel" name="phone" id="phone" size="13" placeholder="010-0000-0000"></p>
+        <p><label>개인 홈페이지</label><input type="url" name="homepg" id="homepg" size="30" placeholder="http://"></p>
+        <p><label>주소<span>*</span></label><input type="text" name="address" id="address" size="30"></p>
+    </div>
     <h3>학 력</h3>
     <div id="select_input">
-    <label>학교 명*<input type="text" name="school" id="school" size="12"></label><br>
-    <label>전공*<input type="text" name="major" id="major" size="12"></label><br>
-    <label>졸업 여부*
-    <select name="graduation" id="graduation">
-        <option value="0">---선택---</option>
-        <option value="1">졸업예정</option>
-        <option value="2">졸업</option>
-    </select></label><br>
-    <label>졸업(예정)일
-    <input type="datetime-local"></label>
-</div>
+        <p><label>학교 명<span>*</span></label><input type="text" name="school" id="school" size="12"></p>
+        <p><label>전공<span>*</span></label><input type="text" name="major" id="major" size="12"></p>
+        <p><label>졸업 여부<span>*</span></label>
+            <select name="graduation" id="graduation">
+                <option value="0">---선택---</option>
+                <option value="1">졸업예정</option>
+                <option value="2">졸업</option>
+            </select>
+        </p>
+        <p><label>졸업(예정)일</label>
+            <input type="datetime-local">
+        </p>
+    </div>
     <h3>업무 경력</h3>
     <div id="input">
-    <label>근무업체명<input type="text" name="offname" id="offname" size="20"></label><br>
-    <label>직위<input type="text" name="position" id="position" size="10"></label><br>
-    <label>담당 업무</label>
-    <textarea id="job" name="job" cols="80" row="10">이전 업체에서 담당한 업무를 기술하시오.</textarea><br>
-    <label>근무년수</label>
-    <input type="number" min="0" max="10" step="0.5">년<br>
-</div>
+        <p><label>근무업체명</label><input type="text" name="offname" id="offname" size="20"></p>
+        <p><label>직위</label><input type="text" name="position" id="position" size="10"></p>
+        <p><label>담당 업무</label>
+        <textarea id="job" name="job" cols="80" rows="10">이전 업체에서 담당한 업무를 기술하시오.</textarea></p>
+        <p><label>근무년수</label>
+        <input type="number" min="0" max="10" step="0.5">년</p>
+    </div>
     <h3>자기소개서</h3>
-    <label>첨부 파일<input type="file" id="file" name="file"></label><br>
-    <input type="submit" value="제출">
-    <input type="reset" value="재작성">
-
+    <p>첨부 파일<input type="file" id="file" name="file"></p>
+    <div style="margin-left: 200px">
+        <input type="submit" value="제출">
+        <input type="reset" value="재작성">
+    </div>
 </form>
 </body>
 </html>
